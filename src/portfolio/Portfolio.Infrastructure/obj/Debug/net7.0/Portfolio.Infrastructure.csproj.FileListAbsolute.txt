@@ -1,0 +1,12 @@
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\bin\Debug\net7.0\Portfolio.Infrastructure.deps.json
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\bin\Debug\net7.0\Portfolio.Infrastructure.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\bin\Debug\net7.0\Portfolio.Infrastructure.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.AssemblyInfo.cs
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\refint\Portfolio.Infrastructure.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\Portfolio.Infrastructure.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.Infrastructure\obj\Debug\net7.0\ref\Portfolio.Infrastructure.dll

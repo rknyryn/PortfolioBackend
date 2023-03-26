@@ -1,0 +1,17 @@
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Porfolio.Application.deps.json
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Porfolio.Application.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Porfolio.Application.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Application.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.CrossCuttingConcern.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Application.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.CrossCuttingConcern.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.csproj.AssemblyReference.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.AssemblyInfoInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.AssemblyInfo.cs
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.csproj.CoreCompileInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.csproj.CopyComplete
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\refint\Porfolio.Application.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\ref\Porfolio.Application.dll

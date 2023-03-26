@@ -1,0 +1,12 @@
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\bin\Debug\net7.0\Core.Security.deps.json
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\bin\Debug\net7.0\Core.Security.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\bin\Debug\net7.0\Core.Security.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.csproj.AssemblyReference.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.AssemblyInfoInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.AssemblyInfo.cs
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.csproj.CoreCompileInputs.cache
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\refint\Core.Security.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\ref\Core.Security.dll
