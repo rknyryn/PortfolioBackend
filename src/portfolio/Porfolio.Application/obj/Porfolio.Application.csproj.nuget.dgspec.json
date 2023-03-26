@@ -150,6 +150,79 @@
         }
       }
     },
+    "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj",
+        "projectName": "Core.Security",
+        "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj",
+        "packagesPath": "C:\\Users\\Kaan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Kaan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\portfolio\\Porfolio.Application\\Porfolio.Application.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -176,6 +249,9 @@
             "projectReferences": {
               "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Application\\Core.Application.csproj": {
                 "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Application\\Core.Application.csproj"
+              },
+              "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj": {
+                "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj"
               }
             }
           }
