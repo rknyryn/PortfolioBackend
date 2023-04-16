@@ -46,7 +46,7 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.5.1, )"
+              "version": "[11.5.2, )"
             },
             "MediatR": {
               "target": "Package",
@@ -62,7 +62,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

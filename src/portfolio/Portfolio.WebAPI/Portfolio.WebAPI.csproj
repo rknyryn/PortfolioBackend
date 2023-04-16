@@ -8,11 +8,21 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\corePackages\Core.CrossCuttingConcern\Core.CrossCuttingConcern.csproj" />
+    <ProjectReference Include="..\Porfolio.Application\Porfolio.Application.csproj" />
+    <ProjectReference Include="..\Portfolio.Persistance\Portfolio.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

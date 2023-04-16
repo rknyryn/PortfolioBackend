@@ -1,4 +1,5 @@
-﻿using Core.Security.Entities;
+﻿using Core.CrossCuttingConcern.Exceptions.Exceptions;
+using Core.Security.Entities;
 using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Constants;
 using Core.Security.Jwt.Dtos;
@@ -9,7 +10,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
+using System.Text;
 
 namespace Core.Security.Jwt.Concretes;
 
@@ -40,7 +41,7 @@ public class JwtHelper : ITokenHelper
         //await _userManager.UpdateAsync(appUser);
 
         DateTime tokenExpiry = DateTime.UtcNow.AddMinutes(_tokenOption.TokenExpires);
-        RefreshToken refreshToken = GenerateRefreshToken();
+        RefreshToken refreshToken = GenerateRefreshToken(appUser);
 
         await _userManager.RemoveAuthenticationTokenAsync(appUser, AuthenticationTokenConstants.LoginProviderName, AuthenticationTokenConstants.RefreshToken);
         await _userManager.SetAuthenticationTokenAsync(appUser, AuthenticationTokenConstants.LoginProviderName, AuthenticationTokenConstants.RefreshToken, refreshToken.Token);
@@ -55,18 +56,52 @@ public class JwtHelper : ITokenHelper
         };
     }
 
-    private RefreshToken GenerateRefreshToken()
+    public ClaimsPrincipal ValidateToken(string token)
     {
-        var randomNumber = new byte[64];
-        using var rng = RandomNumberGenerator.Create();
-        rng.GetBytes(randomNumber);
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_tokenOption.SecurityKey);
 
-        DateTime refreshTokenExpiry = DateTime.UtcNow.AddHours(_tokenOption.RefresTokenExpires);
-        return new RefreshToken
+        var tokenValidationParameters = new TokenValidationParameters
         {
-            Token = $"{Convert.ToBase64String(randomNumber)}{SecurityConstants.Refresh_Token_Split_Character}{refreshTokenExpiry}",
-            Expiry = refreshTokenExpiry
+            ValidateIssuerSigningKey = _tokenOption.ValidateIssuerSigningKey,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = _tokenOption.ValidateIssuer,
+            ValidateAudience = _tokenOption.ValidateAudience
         };
+
+        var claimsPrincipal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
+
+        if (validatedToken is not JwtSecurityToken jwtToken || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            throw new BusinessException("Invalid token signature algorithm");
+
+        int? expirationTime = jwtToken.Payload.Exp ?? throw new BusinessException("Invalid token.");
+        DateTime epoch = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        DateTime expirationDateTime = epoch.AddSeconds(expirationTime.Value);
+        if (expirationDateTime < DateTime.UtcNow) throw new BusinessException("Token has expired");
+
+        return claimsPrincipal;
+    }
+
+    private RefreshToken GenerateRefreshToken(AppUser appUser)
+    {
+        JwtSecurityTokenHandler tokenHandler = new();
+        SecurityKey securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOption.SecurityKey);
+        DateTime expiry = DateTime.UtcNow.AddHours(_tokenOption.RefresTokenExpires);
+        SecurityTokenDescriptor tokenDescriptor = new()
+        {
+            Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString()) }),
+            Expires = expiry,
+            SigningCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey)
+        };
+        SecurityToken securitytToken = tokenHandler.CreateToken(tokenDescriptor);
+        string token = tokenHandler.WriteToken(securitytToken);
+
+        RefreshToken refreshTokenDto = new()
+        {
+            Token = token,
+            Expiry = expiry
+        };
+        return refreshTokenDto;
     }
 
     private string GenerateToken(AppUser appUser, DateTime tokenExpiry)

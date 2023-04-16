@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Core.Persistance.Repositories.Abstractions;
 
-public interface IReadRepository<T> : IRepository<T> where T : IEntity
+public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
 {
     #region Methods
 

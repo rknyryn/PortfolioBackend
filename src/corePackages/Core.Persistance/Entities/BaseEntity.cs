@@ -1,6 +1,6 @@
 ﻿namespace Core.Persistance.Entities;
 
-public class IEntity
+public abstract class BaseEntity
 {
     #region Properties
 

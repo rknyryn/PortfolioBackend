@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core.Persistance.Repositories.Abstractions;
 
-public interface IRepository<T> where T : IEntity
+public interface IRepository<T> where T : BaseEntity
 {
     #region Properties
 

@@ -2,7 +2,7 @@
 
 namespace Core.Persistance.Repositories.Abstractions;
 
-public interface IWriteRepository<T> : IRepository<T> where T : IEntity
+public interface IWriteRepository<T> : IRepository<T> where T : BaseEntity
 {
     #region Methods
 

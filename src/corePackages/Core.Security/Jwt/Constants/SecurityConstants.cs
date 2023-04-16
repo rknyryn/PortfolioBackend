@@ -4,7 +4,7 @@ public static class SecurityConstants
 {
     #region Fields
 
-    public static readonly string Refresh_Token_Split_Character = ";";
+    public static readonly int PASSWORD_MIN_LENGTH = 8;
 
     #endregion Fields
 }

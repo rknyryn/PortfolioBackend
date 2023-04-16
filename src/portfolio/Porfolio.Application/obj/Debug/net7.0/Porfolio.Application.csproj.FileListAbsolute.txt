@@ -15,3 +15,5 @@ C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Applicati
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\refint\Porfolio.Application.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\Porfolio.Application.pdb
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\obj\Debug\net7.0\ref\Porfolio.Application.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Security.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Security.pdb

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Core.Persistance.Repositories.Concretes;
 
 public class EfWriteRepository<TEntity, TContext> : IWriteRepository<TEntity>
-    where TEntity : IEntity
+    where TEntity : BaseEntity
     where TContext : DbContext
 {
     #region Constructors

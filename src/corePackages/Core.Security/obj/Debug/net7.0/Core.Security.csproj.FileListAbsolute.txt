@@ -10,3 +10,6 @@ C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\o
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\refint\Core.Security.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.pdb
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\ref\Core.Security.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\bin\Debug\net7.0\Core.CrossCuttingConcern.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\bin\Debug\net7.0\Core.CrossCuttingConcern.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\corePackages\Core.Security\obj\Debug\net7.0\Core.Security.csproj.CopyComplete

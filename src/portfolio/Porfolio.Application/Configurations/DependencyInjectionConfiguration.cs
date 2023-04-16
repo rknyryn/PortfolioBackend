@@ -2,7 +2,6 @@
 using Core.Application.Utilities.FileOperations.Concretes;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using MediatR;
 using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Concretes;
 using Core.Security.Configurations;
@@ -18,7 +17,7 @@ public static class DependencyInjectionConfiguration
     {
         services.AddAuthenticationServices(configuration);
 
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddMediatR(c => c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddSingleton<IFileOperation, FileOperation>();
         services.AddTransient<ITokenHelper, JwtHelper>();
 

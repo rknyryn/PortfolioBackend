@@ -46,7 +46,7 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.5.1, )"
+              "version": "[11.5.2, )"
             },
             "MediatR": {
               "target": "Package",
@@ -62,7 +62,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -173,7 +173,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.CrossCuttingConcern\\Core.CrossCuttingConcern.csproj": {
+                "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.CrossCuttingConcern\\Core.CrossCuttingConcern.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -268,19 +272,15 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.5.1, )"
+              "version": "[11.5.2, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.5.1, )"
+              "version": "[11.5.2, )"
             },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
-            },
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[11.1.0, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",

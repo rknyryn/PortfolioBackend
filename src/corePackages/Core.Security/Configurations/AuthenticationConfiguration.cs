@@ -13,7 +13,9 @@ public static class AuthenticationConfiguration
     public static IServiceCollection AddAuthenticationServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<TokenOption>(configuration.GetSection("TokenOption"));
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
         TokenOption tokenOptions = configuration.GetSection("TokenOption").Get<TokenOption>();
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
         services.AddAuthentication(options =>
         {

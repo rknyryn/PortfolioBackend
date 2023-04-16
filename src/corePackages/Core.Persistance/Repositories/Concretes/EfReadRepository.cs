@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 namespace Core.Persistance.Repositories.Concretes;
 
 public class EfReadRepository<TEntity, TContext> : IReadRepository<TEntity>
-    where TEntity : IEntity
+    where TEntity : BaseEntity
     where TContext: DbContext
 {
     #region Constructors
