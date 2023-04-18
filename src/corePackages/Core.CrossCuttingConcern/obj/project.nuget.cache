@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UYX6AdZKFqfBfjMBml5hx8IKbzIVhy6mqZTu69ZZAjHee2fROmU1OcHb4jL3S7fvzEC0oAgvJy/fTapWj1Demg==",
+  "dgSpecHash": "tTVfGzdHtRzb7P+sqiQqyfS2O2NmDfASoxaRDo0AeaasafGCaf106Wpi7mmFOFhoYwkDTO9VMPVMWCsHNVHyog==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.CrossCuttingConcern\\Core.CrossCuttingConcern.csproj",
   "expectedPackageFiles": [

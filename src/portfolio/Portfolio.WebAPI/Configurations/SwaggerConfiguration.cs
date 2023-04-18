@@ -10,6 +10,31 @@ public static class SwaggerConfiguration
     {
         services.AddSwaggerGen(c =>
         {
+            c.EnableAnnotations();
+            c.SwaggerDoc("website", new OpenApiInfo
+            {
+                Version = "website",
+                Title = "Portfolio WebAPI",
+                Description = "",
+                TermsOfService = new Uri("https://www.linkedin.com/in/rknyryn/"),
+                Contact = new OpenApiContact
+                {
+                    Name = "Kaan Yarayan",
+                    Email = "rknyryn@gmail.com"
+                }
+            });
+            c.SwaggerDoc("panel", new OpenApiInfo
+            {
+                Version = "panel",
+                Title = "Portfolio WebAPI",
+                Description = "",
+                TermsOfService = new Uri("https://www.linkedin.com/in/rknyryn/"),
+                Contact = new OpenApiContact
+                {
+                    Name = "Kaan Yarayan",
+                    Email = "rknyryn@gmail.com"
+                }
+            });
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
             {
                 Name = "Authorization",
@@ -33,6 +58,17 @@ public static class SwaggerConfiguration
                     },
                     Array.Empty<string>()
                 }
+            });
+        });
+
+        services.AddCors(opt =>
+        {
+            opt.AddPolicy(name: "CorsPolicy", builder =>
+            {
+                builder
+                    .AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
             });
         });
 

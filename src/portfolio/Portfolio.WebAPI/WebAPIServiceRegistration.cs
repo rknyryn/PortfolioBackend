@@ -1,5 +1,6 @@
 ﻿using Porfolio.Application;
 using Portfolio.Persistance;
+using Portfolio.WebAPI.Configurations;
 
 namespace Portfolio.WebAPI;
 
@@ -11,6 +12,7 @@ public static class WebAPIServiceRegistration
     {
         services.AddApplicationServices(configuration);
         services.AddPersistenceServices(configuration);
+        services.AddSwaggerServices();
 
         return services;
     }

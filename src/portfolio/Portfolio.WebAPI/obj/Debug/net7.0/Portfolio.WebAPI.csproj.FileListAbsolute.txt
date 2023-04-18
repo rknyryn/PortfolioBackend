@@ -98,3 +98,4 @@ C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\b
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
