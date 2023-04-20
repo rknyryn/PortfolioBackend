@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/website/swagger.json", "Website API");
         c.SwaggerEndpoint("/swagger/panel/swagger.json", "Panel API");
     });
-    //app.ConfigureCustomExceptionMiddleware();
+    app.ConfigureCustomExceptionMiddleware();
 }
 else
 {

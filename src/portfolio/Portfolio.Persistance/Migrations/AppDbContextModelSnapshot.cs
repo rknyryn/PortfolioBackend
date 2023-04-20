@@ -94,6 +94,27 @@ namespace Portfolio.Persistance.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("e190f0e4-298e-450e-9304-13f51f126fa0"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a59ef8d9-e9cc-459b-8369-4667914ce1cf",
+                            Email = "rknyryn@gmail.com",
+                            EmailConfirmed = true,
+                            FirstName = "Kaan",
+                            LastName = "Yarayan",
+                            LockoutEnabled = true,
+                            NormalizedEmail = "RKNYRYN@GMAIL.COM",
+                            NormalizedUserName = "RKNYRYN@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKHBh1hGaMpRsZ50VoaiTtxllCmm51pOjovHMTTbmzTy2jWLD241ahYuAaFnQ9agkg==",
+                            PhoneNumber = "XXXXXXXXXXXXX",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "000ec947-d4f7-4785-9a48-d46e2a100001",
+                            TwoFactorEnabled = false,
+                            UserName = "rknyryn@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>

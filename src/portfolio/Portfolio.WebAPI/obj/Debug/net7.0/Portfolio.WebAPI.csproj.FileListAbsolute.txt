@@ -99,3 +99,7 @@ C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\b
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Mapster.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Mapster.Core.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Core.Mapper.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Portfolio.WebAPI\bin\Debug\net7.0\Core.Mapper.pdb

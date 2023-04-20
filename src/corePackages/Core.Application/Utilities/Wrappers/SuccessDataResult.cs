@@ -1,4 +1,4 @@
-﻿namespace Core.Application.Utilities.Results;
+﻿namespace Core.Application.Utilities.Wrappers;
 
 public class SuccessDataResult<T> : SuccessResult, IDataResult<T>
 {
