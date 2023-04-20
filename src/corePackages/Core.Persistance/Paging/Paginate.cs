@@ -27,7 +27,7 @@ public class Paginate<T> : IPaginate<T>
             Size = size;
             From = from;
 
-            Count = enumerable.Count();
+            Count = enumerable.Length;
             Pages = (int)Math.Ceiling(Count / (double)Size);
 
             Items = enumerable.Skip((Index - From) * Size).Take(Size).ToList();
@@ -36,7 +36,7 @@ public class Paginate<T> : IPaginate<T>
 
     internal Paginate()
     {
-        Items = new T[0];
+        Items = Array.Empty<T>();
     }
 
     #endregion Constructors
@@ -83,7 +83,7 @@ internal class Paginate<TSource, TResult> : IPaginate<TResult>
             Index = index;
             Size = size;
             From = from;
-            Count = enumerable.Count();
+            Count = enumerable.Length;
             Pages = (int)Math.Ceiling(Count / (double)Size);
 
             var items = enumerable.Skip((Index - From) * Size).Take(Size).ToArray();

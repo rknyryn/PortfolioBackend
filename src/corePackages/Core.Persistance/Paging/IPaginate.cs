@@ -1,6 +1,4 @@
-﻿using Core.Persistance.Entities;
-
-namespace Core.Persistance.Paging;
+﻿namespace Core.Persistance.Paging;
 
 public interface IPaginate<T>
 {

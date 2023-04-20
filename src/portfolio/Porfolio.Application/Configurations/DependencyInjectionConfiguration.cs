@@ -6,6 +6,7 @@ using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Concretes;
 using Core.Security.Configurations;
 using Microsoft.Extensions.Configuration;
+using Core.Mapper;
 
 namespace Porfolio.Application.Configurations;
 
@@ -16,6 +17,7 @@ public static class DependencyInjectionConfiguration
     public static IServiceCollection AddApplicationDependencyInjectionServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddAuthenticationServices(configuration);
+        services.AddMapperServices();
 
         services.AddMediatR(c => c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         services.AddSingleton<IFileOperation, FileOperation>();

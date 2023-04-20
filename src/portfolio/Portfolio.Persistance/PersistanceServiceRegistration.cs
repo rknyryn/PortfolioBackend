@@ -6,6 +6,8 @@ namespace Portfolio.Persistance;
 
 public static class PersistanceServiceRegistration
 {
+    #region Methods
+
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDatabaseConnectionServices(configuration.GetConnectionString("SQL"));
@@ -14,4 +16,6 @@ public static class PersistanceServiceRegistration
 
         return services;
     }
+
+    #endregion Methods
 }
