@@ -9,12 +9,22 @@ namespace Core.CrossCuttingConcern.Exceptions.Middlewares;
 
 public class ExceptionMiddleware
 {
+    #region Fields
+
     private readonly RequestDelegate _next;
+
+    #endregion Fields
+
+    #region Constructors
 
     public ExceptionMiddleware(RequestDelegate next)
     {
         _next = next;
     }
+
+    #endregion Constructors
+
+    #region Methods
 
     public async Task Invoke(HttpContext context)
     {
@@ -66,6 +76,19 @@ public class ExceptionMiddleware
 
         }
 
+        if(exception.GetType() == typeof(UnauthorizedAccessException))
+        {
+            context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            return context.Response.WriteAsync(new CustomProblemDetails.CustomProblemDetails
+            {
+                Status = StatusCodes.Status401Unauthorized,
+                Type = "Unauthorized",
+                Title = "Unauthorized exception",
+                Detail = "",
+                Instance = "",
+            }.ToString());
+        }
+
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
         return context.Response.WriteAsync(new CustomProblemDetails.CustomProblemDetails
         {
@@ -76,4 +99,6 @@ public class ExceptionMiddleware
             Instance = ""
         }.ToString());
     }
+
+    #endregion Methods
 }

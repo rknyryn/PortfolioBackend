@@ -1538,6 +1538,19 @@
           "bin/placeholder/Core.Mapper.dll": {}
         }
       },
+      "Core.Persistance/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.4"
+        },
+        "compile": {
+          "bin/placeholder/Core.Persistance.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Persistance.dll": {}
+        }
+      },
       "Core.Security/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4586,6 +4599,11 @@
       "path": "../../corePackages/Core.Mapper/Core.Mapper.csproj",
       "msbuildProject": "../../corePackages/Core.Mapper/Core.Mapper.csproj"
     },
+    "Core.Persistance/1.0.0": {
+      "type": "project",
+      "path": "../../corePackages/Core.Persistance/Core.Persistance.csproj",
+      "msbuildProject": "../../corePackages/Core.Persistance/Core.Persistance.csproj"
+    },
     "Core.Security/1.0.0": {
       "type": "project",
       "path": "../../corePackages/Core.Security/Core.Security.csproj",
@@ -4596,6 +4614,7 @@
     "net7.0": [
       "Core.Application >= 1.0.0",
       "Core.Mapper >= 1.0.0",
+      "Core.Persistance >= 1.0.0",
       "Core.Security >= 1.0.0",
       "FluentValidation >= 11.5.2",
       "FluentValidation.DependencyInjectionExtensions >= 11.5.2",
@@ -4635,6 +4654,9 @@
             },
             "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Mapper\\Core.Mapper.csproj": {
               "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Mapper\\Core.Mapper.csproj"
+            },
+            "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Persistance\\Core.Persistance.csproj": {
+              "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Persistance\\Core.Persistance.csproj"
             },
             "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj": {
               "projectPath": "C:\\Users\\Kaan\\Desktop\\Projects\\PortfolioBackend\\src\\corePackages\\Core.Security\\Core.Security.csproj"

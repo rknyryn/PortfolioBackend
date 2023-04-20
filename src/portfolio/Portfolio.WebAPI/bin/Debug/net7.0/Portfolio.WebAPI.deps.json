@@ -1035,6 +1035,7 @@
         "dependencies": {
           "Core.Application": "1.0.0",
           "Core.Mapper": "1.0.0",
+          "Core.Persistance": "1.0.0",
           "Core.Security": "1.0.0",
           "FluentValidation": "11.5.2",
           "FluentValidation.DependencyInjectionExtensions": "11.5.2",

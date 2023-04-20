@@ -60,7 +60,6 @@ public static class SwaggerConfiguration
                 }
             });
         });
-
         services.AddCors(opt =>
         {
             opt.AddPolicy(name: "CorsPolicy", builder =>

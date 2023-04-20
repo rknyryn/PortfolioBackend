@@ -10,8 +10,8 @@ public static class WebAPIServiceRegistration
 
     public static IServiceCollection AddWebApiServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddApplicationServices(configuration);
         services.AddPersistenceServices(configuration);
+        services.AddApplicationServices(configuration);
         services.AddSwaggerServices();
 
         return services;

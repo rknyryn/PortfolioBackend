@@ -1,5 +1,4 @@
-﻿using Core.CrossCuttingConcern.Exceptions.Exceptions;
-using Core.Security.Entities;
+﻿using Core.Security.Entities;
 using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Constants;
 using Core.Security.Jwt.Dtos;
@@ -19,13 +18,13 @@ public class JwtHelper : ITokenHelper
     #region Fields
 
     private readonly UserManager<AppUser> _userManager;
-    private readonly TokenOption _tokenOption;
+    private readonly Dtos.TokenOptions _tokenOption;
 
     #endregion Fields
 
     #region Constructors
 
-    public JwtHelper(UserManager<AppUser> userManager, IOptions<TokenOption> tokenOption)
+    public JwtHelper(UserManager<AppUser> userManager, IOptions<Dtos.TokenOptions> tokenOption)
     {
         _userManager = userManager;
         _tokenOption = tokenOption.Value;
@@ -63,21 +62,21 @@ public class JwtHelper : ITokenHelper
 
         var tokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuerSigningKey = _tokenOption.ValidateIssuerSigningKey,
+            ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuer = _tokenOption.ValidateIssuer,
-            ValidateAudience = _tokenOption.ValidateAudience
+            ValidateIssuer = false,
+            ValidateAudience = false
         };
 
         var claimsPrincipal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var validatedToken);
 
         if (validatedToken is not JwtSecurityToken jwtToken || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-            throw new BusinessException("Invalid token signature algorithm");
+            throw new UnauthorizedAccessException("Invalid token signature algorithm");
 
-        int? expirationTime = jwtToken.Payload.Exp ?? throw new BusinessException("Invalid token.");
+        int? expirationTime = jwtToken.Payload.Exp ?? throw new UnauthorizedAccessException("Invalid token.");
         DateTime epoch = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         DateTime expirationDateTime = epoch.AddSeconds(expirationTime.Value);
-        if (expirationDateTime < DateTime.UtcNow) throw new BusinessException("Token has expired");
+        if (expirationDateTime < DateTime.UtcNow) throw new UnauthorizedAccessException("Token has expired");
 
         return claimsPrincipal;
     }

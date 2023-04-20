@@ -19,3 +19,5 @@ C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Applicati
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Security.pdb
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Mapper.dll
 C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Mapper.pdb
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Persistance.dll
+C:\Users\Kaan\Desktop\Projects\PortfolioBackend\src\portfolio\Porfolio.Application\bin\Debug\net7.0\Core.Persistance.pdb

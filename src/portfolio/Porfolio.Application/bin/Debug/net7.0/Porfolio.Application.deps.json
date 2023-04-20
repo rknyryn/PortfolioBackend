@@ -10,6 +10,7 @@
         "dependencies": {
           "Core.Application": "1.0.0",
           "Core.Mapper": "1.0.0",
+          "Core.Persistance": "1.0.0",
           "Core.Security": "1.0.0",
           "FluentValidation": "11.5.2",
           "FluentValidation.DependencyInjectionExtensions": "11.5.2",
@@ -772,6 +773,14 @@
           "Core.Mapper.dll": {}
         }
       },
+      "Core.Persistance/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.4"
+        },
+        "runtime": {
+          "Core.Persistance.dll": {}
+        }
+      },
       "Core.Security/1.0.0": {
         "dependencies": {
           "Core.CrossCuttingConcern": "1.0.0",
@@ -1447,6 +1456,11 @@
       "sha512": ""
     },
     "Core.Mapper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Persistance/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

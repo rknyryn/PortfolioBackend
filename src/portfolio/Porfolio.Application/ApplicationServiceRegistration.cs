@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Core.Security.Configurations;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Porfolio.Application.Configurations;
 
@@ -10,8 +11,9 @@ public static class ApplicationServiceRegistration
 
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddApplicationDependencyInjectionServices(configuration);
+        services.AddApplicationDependencyInjectionServices();
         services.AddPipelineServices();
+        services.AddAuthenticationServices();
 
         return services;
     }

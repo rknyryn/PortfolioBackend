@@ -1,5 +1,7 @@
 ﻿using Core.Application.Utilities.Wrappers;
 using Core.Security.Jwt.Dtos;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Porfolio.Application.Features.Panel.Authentications.Commands;
 
@@ -12,6 +14,17 @@ namespace Portfolio.WebAPI.Areas.Panel
         [HttpPost("Login")]
         public async Task<IDataResult<AccessToken>> Login(LoginCommandRequest request)
             => await Mediator.Send(request);
+
+        [HttpPost("RefreshToken")]
+        public async Task<IDataResult<AccessToken>> RefreshToken(RefreshTokenCommandRequest request)
+            => await Mediator.Send(request);
+
+        [HttpGet]
+        [Authorize]
+        public string Get()
+        {
+            return "Get";
+        }
 
         #endregion Methods
     }
