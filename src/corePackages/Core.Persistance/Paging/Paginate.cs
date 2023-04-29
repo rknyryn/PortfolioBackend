@@ -1,6 +1,8 @@
-﻿namespace Core.Persistance.Paging;
+﻿using Core.Persistance.Entities;
 
-public class Paginate<T> : IPaginate<T>
+namespace Core.Persistance.Paging;
+
+public class Paginate<T> : IPaginate<T> where T : BaseEntity
 {
     #region Constructors
 
@@ -55,92 +57,76 @@ public class Paginate<T> : IPaginate<T>
     #endregion Properties
 }
 
-internal class Paginate<TSource, TResult> : IPaginate<TResult>
-{
-    #region Constructors
+//internal class Paginate<TSource, TResult> : IPaginate<TResult>
+//    where TSource: BaseEntity
+//    where TResult : BaseEntity
+//{
+//    #region Constructors
 
-    public Paginate(IEnumerable<TSource> source, Func<IEnumerable<TSource>, IEnumerable<TResult>> converter,
-        int index, int size, int from)
-    {
-        var enumerable = source as TSource[] ?? source.ToArray();
+//    public Paginate(IEnumerable<TSource> source, Func<IEnumerable<TSource>, IEnumerable<TResult>> converter,
+//        int index, int size, int from)
+//    {
+//        var enumerable = source as TSource[] ?? source.ToArray();
 
-        if (from > index) throw new ArgumentException($"From: {from} > Index: {index}, must From <= Index");
+//        if (from > index) throw new ArgumentException($"From: {from} > Index: {index}, must From <= Index");
 
-        if (source is IQueryable<TSource> queryable)
-        {
-            Index = index;
-            Size = size;
-            From = from;
-            Count = queryable.Count();
-            Pages = (int)Math.Ceiling(Count / (double)Size);
+//        if (source is IQueryable<TSource> queryable)
+//        {
+//            Index = index;
+//            Size = size;
+//            From = from;
+//            Count = queryable.Count();
+//            Pages = (int)Math.Ceiling(Count / (double)Size);
 
-            var items = queryable.Skip((Index - From) * Size).Take(Size).ToArray();
+//            var items = queryable.Skip((Index - From) * Size).Take(Size).ToArray();
 
-            Items = new List<TResult>(converter(items));
-        }
-        else
-        {
-            Index = index;
-            Size = size;
-            From = from;
-            Count = enumerable.Length;
-            Pages = (int)Math.Ceiling(Count / (double)Size);
+//            Items = new List<TResult>(converter(items));
+//        }
+//        else
+//        {
+//            Index = index;
+//            Size = size;
+//            From = from;
+//            Count = enumerable.Length;
+//            Pages = (int)Math.Ceiling(Count / (double)Size);
 
-            var items = enumerable.Skip((Index - From) * Size).Take(Size).ToArray();
+//            var items = enumerable.Skip((Index - From) * Size).Take(Size).ToArray();
 
-            Items = new List<TResult>(converter(items));
-        }
-    }
+//            Items = new List<TResult>(converter(items));
+//        }
+//    }
 
 
-    public Paginate(IPaginate<TSource> source, Func<IEnumerable<TSource>, IEnumerable<TResult>> converter)
-    {
-        Index = source.Index;
-        Size = source.Size;
-        From = source.From;
-        Count = source.Count;
-        Pages = source.Pages;
+//    public Paginate(IPaginate<TSource> source, Func<IEnumerable<TSource>, IEnumerable<TResult>> converter)
+//    {
+//        Index = source.Index;
+//        Size = source.Size;
+//        From = source.From;
+//        Count = source.Count;
+//        Pages = source.Pages;
 
-        Items = new List<TResult>(converter(source.Items));
-    }
+//        Items = new List<TResult>(converter(source.Items));
+//    }
 
-    #endregion Constructors
+//    #endregion Constructors
 
-    #region Properties
+//    #region Properties
 
-    public int Index { get; }
+//    public int Index { get; }
 
-    public int Size { get; }
+//    public int Size { get; }
 
-    public int Count { get; }
+//    public int Count { get; }
 
-    public int Pages { get; }
+//    public int Pages { get; }
 
-    public int From { get; }
+//    public int From { get; }
 
-    public IList<TResult> Items { get; }
+//    public IList<TResult> Items { get; }
 
-    public bool HasPrevious => Index - From > 0;
+//    public bool HasPrevious => Index - From > 0;
 
-    public bool HasNext => Index - From + 1 < Pages;
+//    public bool HasNext => Index - From + 1 < Pages;
 
-    #endregion Properties
-}
-
-public static class Paginate
-{
-    #region Methods
-
-    public static IPaginate<T> Empty<T>()
-    {
-        return new Paginate<T>();
-    }
-
-    public static IPaginate<TResult> From<TResult, TSource>(IPaginate<TSource> source,
-        Func<IEnumerable<TSource>, IEnumerable<TResult>> converter)
-    {
-        return new Paginate<TSource, TResult>(source, converter);
-    }
-
-    #endregion Methods
-}
+//    #endregion Properties
+//}

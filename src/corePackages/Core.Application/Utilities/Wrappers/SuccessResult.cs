@@ -1,6 +1,6 @@
 ﻿namespace Core.Application.Utilities.Wrappers;
 
-public class SuccessResult : IResult
+public class SuccessResult : IMessageResult
 {
     #region Constructors
 

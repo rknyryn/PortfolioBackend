@@ -28,11 +28,17 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
             {
                 entity.Entity.CreatedDate = DateTime.UtcNow;
                 entity.Entity.UpdatedDate = DateTime.UtcNow;
-                entity.Entity.IsDeleted = false;
+                entity.Entity.Deleted = false;
+                entity.Entity.PermentlyDeleted = false;
             }
             else if (entity.State == EntityState.Modified)
             {
                 entity.Entity.UpdatedDate = DateTime.UtcNow;
+            }
+            else if(entity.State == EntityState.Deleted)
+            {
+                entity.Entity.Deleted = true;
+                entity.Entity.DeletedDate = DateTime.UtcNow;
             }
         }
         return await base.SaveChangesAsync(cancellationToken);

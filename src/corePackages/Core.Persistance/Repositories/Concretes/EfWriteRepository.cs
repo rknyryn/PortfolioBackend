@@ -42,8 +42,7 @@ public class EfWriteRepository<TEntity, TContext> : IWriteRepository<TEntity>
 
     public void Delete(TEntity entity)
     {
-        entity.IsDeleted = true;
-        Update(entity);
+        Context.Entry(entity).State = EntityState.Deleted;
     }
 
     public async Task DeleteByIdAsync(Guid id)

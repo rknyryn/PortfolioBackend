@@ -1,6 +1,8 @@
-﻿namespace Core.Persistance.Paging;
+﻿using Core.Persistance.Entities;
 
-public interface IPaginate<T>
+namespace Core.Persistance.Paging;
+
+public interface IPaginate<T> where T : BaseEntity
 {
     #region Properties
 

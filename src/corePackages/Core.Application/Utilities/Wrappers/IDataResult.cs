@@ -1,6 +1,6 @@
 ﻿namespace Core.Application.Utilities.Wrappers;
 
-public interface IDataResult<out T> : IResult
+public interface IDataResult<out T> : IMessageResult
 {
     #region Properties
 

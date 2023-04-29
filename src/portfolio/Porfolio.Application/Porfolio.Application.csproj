@@ -18,11 +18,11 @@
     <ProjectReference Include="..\..\corePackages\Core.Mapper\Core.Mapper.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Persistance\Core.Persistance.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
+    <ProjectReference Include="..\Portfolio.Domain\Portfolio.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Features\Website\" />
-    <Folder Include="Services\Repositories\" />
   </ItemGroup>
 
 </Project>

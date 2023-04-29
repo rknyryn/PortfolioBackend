@@ -10,7 +10,19 @@ public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
     #region Methods
 
     Task<T> GetSingleAsync(Expression<Func<T, bool>> predicate, bool tracking = true);
-    Task<IPaginate<T>> GetListAsync(Expression<Func<T, bool>>? predicate = null,
+    Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>>? predicate = null,
+                         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+                         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+                         bool tracking = true,
+                         CancellationToken cancellationToken = default);
+    Task<IPaginate<T>> GetPaginatedListAsync(Expression<Func<T, bool>>? predicate = null,
+                         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+                         Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+                         int index = 0,
+                         int size = 10,
+                         bool tracking = true,
+                         CancellationToken cancellationToken = default);
+    Task<IPaginate<T>> GetPaginatedDeletedListAsync(Expression<Func<T, bool>>? predicate = null,
                          Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                          Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
                          int index = 0,

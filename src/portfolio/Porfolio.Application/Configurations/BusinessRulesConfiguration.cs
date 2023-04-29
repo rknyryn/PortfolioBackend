@@ -20,7 +20,9 @@ public static class BusinessRulesConfiguration
 
         foreach (Type businessRule in businessRules)
         {   
-            services.AddTransient(typeof(IBusinessRule), businessRule);
+            services
+                .AddTransient(businessRule)
+                .AddTransient(typeof(IBusinessRule), businessRule);
         }
 
         return services;

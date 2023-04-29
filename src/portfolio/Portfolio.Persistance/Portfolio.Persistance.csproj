@@ -21,10 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\corePackages\Core.Persistance\Core.Persistance.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\Porfolio.Application\Porfolio.Application.csproj" />
+    <ProjectReference Include="..\Portfolio.Domain\Portfolio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

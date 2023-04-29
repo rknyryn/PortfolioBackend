@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Persistance.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Persistance.Paging;
 
@@ -7,6 +8,7 @@ public static class IQueryablePaginateExtensions
     #region Methods
 
     public static async Task<IPaginate<T>> ToPaginateAsync<T>(this IQueryable<T> source, int index, int size, int from = 0, CancellationToken cancellationToken = default)
+        where T : BaseEntity
     {
         if (from > index) throw new ArgumentException($"From: {from} > Index: {index}, must From <= Index");
 
