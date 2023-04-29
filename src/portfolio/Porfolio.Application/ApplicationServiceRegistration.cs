@@ -9,11 +9,12 @@ public static class ApplicationServiceRegistration
 {
     #region Methods
 
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddApplicationDependencyInjectionServices();
         services.AddPipelineServices();
         services.AddAuthenticationServices();
+        services.AddTransientBusinessRules(AppDomain.CurrentDomain.GetAssemblies());
 
         return services;
     }

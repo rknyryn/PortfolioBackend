@@ -4,7 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Concretes;
-using Microsoft.Extensions.Configuration;
 using Core.Mapper;
 
 namespace Porfolio.Application.Configurations;

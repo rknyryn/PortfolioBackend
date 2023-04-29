@@ -1,11 +1,12 @@
-﻿using Core.CrossCuttingConcern.Exceptions.Exceptions;
+﻿using Core.Application.Rules.Abstractions;
+using Core.CrossCuttingConcern.Exceptions.Exceptions;
 using Core.Security.Entities;
 using Core.Security.Jwt.Constants;
 using Microsoft.AspNetCore.Identity;
 
 namespace Porfolio.Application.Features.Panel.Authentications.Rules;
 
-public class AuthenticationRules
+public class AuthenticationRules : IBusinessRule
 {
     #region Fields
 
@@ -29,7 +30,7 @@ public class AuthenticationRules
         if (appUser is null) throw new BusinessException("Kullanıcı bulunamadı.");
     }
 
-    public async Task IsRefreshTokenExistAsync(AppUser appUser, string refreshToken)
+    public async Task CheckRefreshTokenExistsAsync(AppUser appUser, string refreshToken)
     {
         string refreshTokenFromDb =
             await _userManager.GetAuthenticationTokenAsync(appUser, AuthenticationTokenConstants.LoginProviderName, AuthenticationTokenConstants.RefreshToken)

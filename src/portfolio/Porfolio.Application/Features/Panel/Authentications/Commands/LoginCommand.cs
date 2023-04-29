@@ -1,4 +1,5 @@
-﻿using Core.Application.Utilities.Wrappers;
+﻿using Core.Application.Rules.Factories;
+using Core.Application.Utilities.Wrappers;
 using Core.CrossCuttingConcern.Exceptions.Exceptions;
 using Core.Security.Entities;
 using Core.Security.Jwt.Abstractions;
@@ -6,6 +7,7 @@ using Core.Security.Jwt.Constants;
 using Core.Security.Jwt.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Porfolio.Application.Features.Panel.Authentications.Rules;
 
 namespace Porfolio.Application.Features.Panel.Authentications.Commands;
 
@@ -27,6 +29,7 @@ public class LoginCommandHandler
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
     private readonly ITokenHelper _tokenHelper;
+    private readonly AuthenticationRules _authenticationRules;
 
     #endregion Fields
 
@@ -35,11 +38,13 @@ public class LoginCommandHandler
     public LoginCommandHandler(
         UserManager<AppUser> userManager,
         SignInManager<AppUser> signInManager,
-        ITokenHelper tokenHelper)
+        ITokenHelper tokenHelper,
+        IBusinessRuleFactory businessRuleFactory)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenHelper = tokenHelper;
+        _authenticationRules = (AuthenticationRules)businessRuleFactory.GetBusinessRule(typeof(AuthenticationRules));
     }
 
     #endregion Constructors
@@ -49,6 +54,8 @@ public class LoginCommandHandler
     public async Task<IDataResult<AccessToken>> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
     {
         AppUser appUser = await _userManager.FindByEmailAsync(request.Email);
+        _authenticationRules.CheckIfAppUserExists(appUser);
+
         await SignInAsync(appUser, request.Password);
         AccessToken accessToken = await _tokenHelper.CreateTokenAsync(appUser);
 

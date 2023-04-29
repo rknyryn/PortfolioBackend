@@ -11,7 +11,7 @@ public static class WebAPIServiceRegistration
     public static IServiceCollection AddWebApiServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddPersistenceServices(configuration);
-        services.AddApplicationServices(configuration);
+        services.AddApplicationServices();
         services.AddSwaggerServices();
 
         return services;

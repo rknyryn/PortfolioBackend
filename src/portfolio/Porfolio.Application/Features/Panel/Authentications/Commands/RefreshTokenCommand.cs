@@ -1,4 +1,5 @@
-﻿using Core.Application.Utilities.Wrappers;
+﻿using Core.Application.Rules.Factories;
+using Core.Application.Utilities.Wrappers;
 using Core.Security.Entities;
 using Core.Security.Jwt.Abstractions;
 using Core.Security.Jwt.Dtos;
@@ -25,6 +26,7 @@ public class RefreshTokenCommandHandler
 
     private readonly ITokenHelper _tokenHelper;
     private readonly UserManager<AppUser> _userManager;
+    private readonly AuthenticationRules _authenticationRules;
 
     #endregion Fields
 
@@ -32,10 +34,12 @@ public class RefreshTokenCommandHandler
 
     public RefreshTokenCommandHandler(
         ITokenHelper tokenHelper,
-        UserManager<AppUser> userManager)
+        UserManager<AppUser> userManager,
+        IBusinessRuleFactory businessRuleFactory)
     {
         _tokenHelper = tokenHelper;
         _userManager = userManager;
+        _authenticationRules = (AuthenticationRules)businessRuleFactory.GetBusinessRule(typeof(AuthenticationRules));
     }
 
     #endregion Constructors
@@ -44,14 +48,12 @@ public class RefreshTokenCommandHandler
 
     public async Task<IDataResult<AccessToken>> Handle(RefreshTokenCommandRequest request, CancellationToken cancellationToken)
     {
-        AuthenticationRules authenticationRules = new(_userManager);
-
         ClaimsPrincipal claims = _tokenHelper.ValidateToken(request.RefreshToken);
         string nameIdentifier = claims.FindFirstValue(ClaimTypes.NameIdentifier);
         AppUser? appUser = await _userManager.FindByIdAsync(nameIdentifier);
 
-        authenticationRules.CheckIfAppUserExists(appUser);
-        await authenticationRules.IsRefreshTokenExistAsync(appUser, request.RefreshToken);
+        _authenticationRules.CheckIfAppUserExists(appUser);
+        await _authenticationRules.CheckRefreshTokenExistsAsync(appUser, request.RefreshToken);
 
         AccessToken accessToken = await _tokenHelper.CreateTokenAsync(appUser);
 
