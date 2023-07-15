@@ -1,7 +1,9 @@
 ﻿using Core.Persistance.Entities;
+using Core.Persistance.Paging.Abstractions;
+using Core.Persistance.Paging.Concretes;
 using Microsoft.EntityFrameworkCore;
 
-namespace Core.Persistance.Paging;
+namespace Core.Persistance.Paging.Extensions;
 
 public static class IQueryablePaginateExtensions
 {

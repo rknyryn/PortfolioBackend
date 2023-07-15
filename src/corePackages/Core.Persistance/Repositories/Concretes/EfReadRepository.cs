@@ -1,9 +1,9 @@
 ﻿using Core.Persistance.Entities;
-using Core.Persistance.Paging;
+using Core.Persistance.Paging.Abstractions;
+using Core.Persistance.Paging.Extensions;
 using Core.Persistance.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using System.Drawing;
 using System.Linq.Expressions;
 
 namespace Core.Persistance.Repositories.Concretes;
@@ -88,11 +88,17 @@ public class EfReadRepository<TEntity, TContext> : IReadRepository<TEntity>
         return await queryable.Where(x => x.Deleted && !x.PermentlyDeleted).ToPaginateAsync(index, size, 0, cancellationToken);
     }
 
-    public async Task<TEntity> GetSingleAsync(Expression<Func<TEntity, bool>> predicate, bool tracking = true)
+    public async Task<TEntity> GetSingleAsync(
+        Expression<Func<TEntity, bool>> predicate,
+        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
+        bool tracking = true,
+        CancellationToken cancellationToken = default)
     {
         IQueryable<TEntity> queryable = Table.AsQueryable();
         if (tracking is false) queryable.AsNoTracking();
-        return await queryable.FirstAsync(predicate);
+        if (include is not null) queryable = include(queryable);
+
+        return await queryable.FirstAsync(predicate, cancellationToken: cancellationToken);
     }
 
     public async Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> predicate, bool tracking = true)

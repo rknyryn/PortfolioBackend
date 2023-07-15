@@ -1,5 +1,5 @@
 ﻿using Core.Persistance.Entities;
-using Core.Persistance.Paging;
+using Core.Persistance.Paging.Abstractions;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
@@ -9,7 +9,11 @@ public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
 {
     #region Methods
 
-    Task<T> GetSingleAsync(Expression<Func<T, bool>> predicate, bool tracking = true);
+    Task<T> GetSingleAsync(
+        Expression<Func<T, bool>> predicate,
+        Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+        bool tracking = true,
+        CancellationToken cancellationToken = default);
     Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>>? predicate = null,
                          Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
                          Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,

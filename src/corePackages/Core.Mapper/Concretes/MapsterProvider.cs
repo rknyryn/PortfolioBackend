@@ -12,5 +12,10 @@ public class MapsterProvider : IMapper
         return source.Adapt<TDestination>();
     }
 
+    public TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
+    {
+        return source.Adapt<TSource, TDestination>(destination);
+    }
+
     #endregion Methods
 }

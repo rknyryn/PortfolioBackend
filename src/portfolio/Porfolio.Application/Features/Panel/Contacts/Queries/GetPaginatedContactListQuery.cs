@@ -1,7 +1,8 @@
 ﻿using Core.Abstractions.Mapper;
 using Core.Application.Dtos;
 using Core.Application.Utilities.Wrappers;
-using Core.Persistance.Paging;
+using Core.Persistance.Paging.Abstractions;
+using Core.Persistance.Paging.ViewModels;
 using MediatR;
 using Porfolio.Application.Features.Panel.Contacts.ViewModels;
 using Porfolio.Application.Services.Repositories.ContactRepositories;

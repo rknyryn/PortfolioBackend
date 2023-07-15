@@ -1,6 +1,6 @@
 ﻿using Core.Persistance.Entities;
 
-namespace Core.Persistance.Paging;
+namespace Core.Persistance.Paging.Abstractions;
 
 public interface IPaginate<T> where T : BaseEntity
 {

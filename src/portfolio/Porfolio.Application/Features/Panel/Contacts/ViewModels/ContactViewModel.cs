@@ -1,4 +1,4 @@
-﻿using Core.Persistance.Paging;
+﻿using Core.Persistance.Paging.Abstractions;
 
 namespace Porfolio.Application.Features.Panel.Contacts.ViewModels;
 

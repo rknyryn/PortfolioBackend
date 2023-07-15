@@ -1,4 +1,6 @@
-﻿namespace Core.Persistance.Paging;
+﻿using Core.Persistance.Paging.Abstractions;
+
+namespace Core.Persistance.Paging.ViewModels;
 
 public class BasePageableModel<T> where T : IViewModel
 {

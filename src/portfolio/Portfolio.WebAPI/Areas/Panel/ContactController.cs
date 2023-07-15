@@ -1,5 +1,5 @@
 ﻿using Core.Application.Utilities.Wrappers;
-using Core.Persistance.Paging;
+using Core.Persistance.Paging.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Porfolio.Application.Features.Panel.Contacts.Commands;
 using Porfolio.Application.Features.Panel.Contacts.Queries;
@@ -21,6 +21,10 @@ namespace Portfolio.WebAPI.Areas.Panel
 
         [HttpPut("Active")]
         public async Task<IMessageResult> Active(ActiveContactCommandRequest request)
+            => await Mediator.Send(request);
+
+        [HttpPut]
+        public async Task<IMessageResult> Update(UpdateContactCommandRequest request)
             => await Mediator.Send(request);
 
         #endregion Methods
