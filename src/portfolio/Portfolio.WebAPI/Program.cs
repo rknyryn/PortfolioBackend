@@ -12,7 +12,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddWebApiServices(builder.Configuration);
 
 var app = builder.Build();
-AppDbInitializer.DbInitialize(app);
 
 //Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

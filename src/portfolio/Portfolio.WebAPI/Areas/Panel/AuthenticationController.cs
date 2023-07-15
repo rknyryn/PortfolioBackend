@@ -1,6 +1,5 @@
 ﻿using Core.Application.Utilities.Wrappers;
 using Core.Security.Jwt.Dtos;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Porfolio.Application.Features.Panel.Authentications.Commands;

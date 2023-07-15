@@ -1,5 +1,4 @@
 ﻿using Core.Security.Configurations;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Porfolio.Application.Configurations;
 
