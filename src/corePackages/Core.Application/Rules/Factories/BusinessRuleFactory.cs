@@ -21,21 +21,9 @@ public class BusinessRuleFactory : IBusinessRuleFactory
 
     #region Methods
 
-    public IBusinessRule GetBusinessRule(Type businessRuleType)
-    {
-        if (businessRuleType == null)
-        {
-            throw new ArgumentNullException(nameof(businessRuleType));
-        }
-
-        if (!typeof(IBusinessRule).IsAssignableFrom(businessRuleType))
-        {
-            throw new ArgumentException($"{businessRuleType} does not implement {typeof(IBusinessRule)}.");
-        }
-
-        return (IBusinessRule)_serviceProvider.GetService(businessRuleType);
-    }
+    public TRule GetBusinessRule<TRule>() where TRule : class, IBusinessRule
+        => (TRule)_serviceProvider.GetService(typeof(TRule));
 
     #endregion Methods
 }
-    
+

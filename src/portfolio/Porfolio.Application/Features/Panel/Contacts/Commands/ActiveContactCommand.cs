@@ -1,4 +1,4 @@
-﻿using Core.Application.Rules.Factories;
+﻿using Core.Application.Rules.Abstractions;
 using Core.Application.Utilities.Wrappers;
 using Core.Persistance.UnitOfWork.Abstractions;
 using MediatR;
@@ -41,7 +41,7 @@ public class ActiveContactCommandHandler
         _readContactRepository = readContactRepository;
         _writeContactRepository = writeContactRepository;
         _unitOfWork = unitOfWork;
-        _contactRules = (ContactRules)businessRuleFactory.GetBusinessRule(typeof(ContactRules));
+        _contactRules = businessRuleFactory.GetBusinessRule<ContactRules>();
     }
 
     #endregion Constructors

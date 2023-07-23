@@ -1,4 +1,4 @@
-﻿using Core.Application.Rules.Factories;
+﻿using Core.Application.Rules.Abstractions;
 using Core.Application.Utilities.Wrappers;
 using Core.CrossCuttingConcern.Exceptions.Exceptions;
 using Core.Security.Entities;
@@ -44,7 +44,7 @@ public class LoginCommandHandler
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenHelper = tokenHelper;
-        _authenticationRules = (AuthenticationRules)businessRuleFactory.GetBusinessRule(typeof(AuthenticationRules));
+        _authenticationRules = businessRuleFactory.GetBusinessRule<AuthenticationRules>();
     }
 
     #endregion Constructors

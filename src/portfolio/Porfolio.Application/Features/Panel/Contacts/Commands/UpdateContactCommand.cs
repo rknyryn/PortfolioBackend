@@ -1,5 +1,5 @@
 ﻿using Core.Abstractions.Mapper;
-using Core.Application.Rules.Factories;
+using Core.Application.Rules.Abstractions;
 using Core.Application.Utilities.Wrappers;
 using Core.Persistance.UnitOfWork.Abstractions;
 using MediatR;
@@ -46,7 +46,7 @@ namespace Porfolio.Application.Features.Panel.Contacts.Commands
             _writeContactRepository = writeContactRepository;
             _mapper = mapper;
             _unitOfWork = unitOfWork;
-            _contactRules = (ContactRules)businessRuleFactory.GetBusinessRule(typeof(ContactRules));
+            _contactRules = businessRuleFactory.GetBusinessRule<ContactRules>();
         }
 
         #endregion Constructors

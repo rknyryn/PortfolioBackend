@@ -1,4 +1,4 @@
-﻿using Core.Application.Rules.Factories;
+﻿using Core.Application.Rules.Abstractions;
 using Core.Application.Utilities.Wrappers;
 using Core.Security.Entities;
 using Core.Security.Jwt.Abstractions;
@@ -39,7 +39,7 @@ public class RefreshTokenCommandHandler
     {
         _tokenHelper = tokenHelper;
         _userManager = userManager;
-        _authenticationRules = (AuthenticationRules)businessRuleFactory.GetBusinessRule(typeof(AuthenticationRules));
+        _authenticationRules = businessRuleFactory.GetBusinessRule<AuthenticationRules>();
     }
 
     #endregion Constructors
